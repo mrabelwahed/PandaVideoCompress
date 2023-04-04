@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 29
@@ -29,4 +30,19 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/isoparser-1.0.6.jar')
     compile files('libs/aspectjrt-1.7.3.jar')
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.mrabelwahed'
+                artifactId = 'compress-video'
+                version = '1.4'
+            }
+        }
+    }
 }
