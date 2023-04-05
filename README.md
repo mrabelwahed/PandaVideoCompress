@@ -7,6 +7,30 @@ I tried many Video compressor as expected some are not working and outdated ,som
 ## Demo
 ![Demo](/pic/demo.gif)
 
+## Setup
+
+Add it in your root build.gradle at the end of repositories:
+
+```
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+        
+        
+       
+ 
+ ## Add the dependency
+  
+  
+  
+   implementation 'com.github.mrabelwahed:PandaVideoCompress:1.0'
+   
+  ```
+
 ## Usage
 ### Call compressVideoLow, compressVideoMedium and compressVideoHigh that indicates 3 quality of compressing.
         VideoCompress.compressVideoLow(String srcPath, String destPath, new VideoCompress.CompressListener() {
